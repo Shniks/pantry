@@ -10,8 +10,11 @@ class Recipe
 
   def add_ingredient(ingredient, quantity)
     ingredients_required[ingredient] += quantity
-    ingredients << ingredient if !ingredients.include?(ingredient)
+    insert_ingredient_into_ingredients(ingredient)
   end
 
+  def insert_ingredient_into_ingredients(ingredient)
+    ingredients << ingredient if !ingredients.include?(ingredient)
+  end
 
 end

@@ -19,7 +19,7 @@ class RecipeTest < Minitest::Test
     assert_equal ({}), recipe1.ingredients_required
   end
 
-  def test_it_can_add_ingredients
+  def test_it_can_add_ingredients_to_a_recipe
     ingredient1 = Ingredient.new({name: "Cheese", unit: "C", calories: 100})
     ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 30})
     recipe1 = Recipe.new("Mac and Cheese")
