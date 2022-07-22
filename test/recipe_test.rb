@@ -19,7 +19,7 @@ class RecipeTest < Minitest::Test
     assert_equal ({}), recipe1.ingredients_required
   end
 
-  def it_can_add_ingredients
+  def test_it_can_add_ingredients
     ingredient1 = Ingredient.new({name: "Cheese", unit: "C", calories: 100})
     ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 30})
     recipe1 = Recipe.new("Mac and Cheese")
@@ -30,8 +30,8 @@ class RecipeTest < Minitest::Test
 
     expectation = ({ingredient1 => 6, ingredient2 => 8})
 
-    assert_equal expection, recipe1.ingredients_required
-    assert_equal [ingredient1, ingredient2], recipe1.ingredients 
+    assert_equal expectation, recipe1.ingredients_required
+    assert_equal [ingredient1, ingredient2], recipe1.ingredients
   end
 
 end
