@@ -2,6 +2,7 @@ require 'simplecov'
 SimpleCov.start
 require 'minitest/autorun'
 require 'minitest/pride'
+require './lib/ingredient'
 require 'pry'
 
 class IngredientTest < Minitest::Test
