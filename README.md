@@ -1,14 +1,10 @@
-# Pantry
-## Instructions
-
-* Fork this repository
-* Clone **your** forked repo to your computer.
-* Complete the activity below.
-* Push your solution to your forked repo
-* Submit a pull request from your repository to this repository
-  * __Put your name in your PR!__
-
-NOTE: In order to earn points, methods must be tested appropriately and implemented per the interaction pattern.
+---
+Project Title: Pantry
+Author: Nikhil Shahi
+Date: July 22, 2022
+Test Framework: Minitest
+Test Coverage: 100%
+---
 
 ## Iteration 1 - Ingredient and Pantry
 
