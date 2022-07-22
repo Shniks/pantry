@@ -8,7 +8,4 @@ class Ingredient
     @calories = ingredient[:calories]
   end
 
-
-
-
 end
