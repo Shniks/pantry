@@ -1,4 +1,3 @@
-require 'pry'
 class Recipe
 
   attr_reader :name,  :ingredients_required,  :ingredients

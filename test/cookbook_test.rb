@@ -24,6 +24,7 @@ class CookbookTest < Minitest::Test
   end
 
   def test_it_can_find_highest_calorie_meal
+    cookbook = Cookbook.new
     ingredient1 = Ingredient.new({name: "Cheese", unit: "C", calories: 100})
     ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 30})
     recipe1 = Recipe.new("Mac and Cheese")
@@ -40,9 +41,8 @@ class CookbookTest < Minitest::Test
     cookbook.add_recipe(recipe2)
     expectation = ["Cheese", "Macaroni", "Ground Beef", "Bun"]
 
-
     assert_equal expectation, cookbook.ingredients
-    assert_equal recipe2, cookbook.highest_calorie_meal 
+    assert_equal recipe2, cookbook.highest_calorie_meal
   end
 
 end
