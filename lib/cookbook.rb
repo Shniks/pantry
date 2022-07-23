@@ -12,17 +12,21 @@ class Cookbook
   end
 
   def ingredients
-    recipe_names = []
+    i_names = []
     recipes.each do |recipe|
-      insert_ingredients(recipe, recipe_names)
+      insert_ingredients(recipe, i_names)
     end
-  recipe_names
+  i_names
   end
 
-  def insert_ingredients(recipe, recipe_names)
+  def insert_ingredients(recipe, i_names)
     recipe.ingredients.each do |ingredient|
-      recipe_names << ingredient.name if !recipe_names.include?(ingredient.name)
+      i_names << ingredient.name if !i_names.include?(ingredient.name)
     end
+  end
+
+  def highest_calorie_meal
+    recipes.max_by { |recipe| recipe.total_calories }
   end
 
 end
