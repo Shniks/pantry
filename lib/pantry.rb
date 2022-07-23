@@ -1,3 +1,4 @@
+require 'pry'
 class Pantry
 
   attr_reader :stock
@@ -12,6 +13,13 @@ class Pantry
 
   def restock(ingredient, quantity)
     stock[ingredient] += quantity
+  end
+
+  def enough_ingredients_for?(recipe)
+    recipe.ingredients_required.each do |ingredient, value|
+      return false if stock_check(ingredient) < value
+    end
+    true
   end
 
 end

@@ -3,6 +3,9 @@ SimpleCov.start
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/pantry'
+require './lib/ingredient'
+require './lib/recipe'
+require './lib/cookbook'
 
 class PantryTest < Minitest::Test
 
@@ -56,15 +59,15 @@ class PantryTest < Minitest::Test
     pantry.restock(ingredient1, 5)
     pantry.restock(ingredient1, 10)
 
-    refute pantry.enough_ingredients_for?(recipe1)
+    assert_equal false, pantry.enough_ingredients_for?(recipe1)
 
     pantry.restock(ingredient2, 7)
 
-    refute pantry.enough_ingredients_for?(recipe1)
+    assert_equal false, pantry.enough_ingredients_for?(recipe1)
 
     pantry.restock(ingredient2, 1)
 
-    assert pantry.enough_ingredients_for?(recipe1)
+    assert_equal true, pantry.enough_ingredients_for?(recipe1)
   end
 
 end
