@@ -46,7 +46,7 @@ class CookbookTest < Minitest::Test
   end
 
   def test_it_can_create_a_cookbook_summary
-    cookbook = CookBook.new
+    cookbook = Cookbook.new
     ingredient1 = Ingredient.new({name: "Cheese", unit: "C", calories: 100})
     ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 30})
     recipe1 = Recipe.new("Mac and Cheese")
@@ -62,7 +62,7 @@ class CookbookTest < Minitest::Test
     expectation = [{:name=>"Mac and Cheese", :details=>{:ingredients=>[{:ingredient=>"Macaroni", :amount=>"8 oz"}, {:ingredient=>"Cheese", :amount=>"2 C"}], :total_calories=>440}},
                    {:name=>"Burger", :details=>{:ingredients=>[{:ingredient=>"Ground Beef", :amount=>"4 oz"}, {:ingredient=>"Bun", :amount=>"100 g"}], :total_calories=>500}}]
 
-    assert_equal expectation, cookbook.summary 
+    assert_equal expectation, cookbook.summary
   end
 
 end
