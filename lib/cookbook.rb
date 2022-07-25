@@ -31,17 +31,28 @@ class Cookbook
 
   def summary
     cb_summary = []
+    populate_summary(cb_summary)
+  end
+
+  def populate_summary(cb_summary)
     recipes.each do |recipe|
       ordered = []
-      order = recipe.ingredients_required.sort_by do |ingredient, quantity|
-        -ingredient.calories * quantity
-      end
-      order.each do |i|
-        ordered << {:ingredient => i.first.name, :amount => "#{i.last} #{i.first.unit}"}
-      end
+      insert_ingredients_ordered(recipe, ordered)
       cb_summary << {:name => recipe.name, :details => {:ingredients => ordered, :total_calories =>recipe.total_calories}}
     end
     cb_summary
+  end
+
+  def insert_ingredients_ordered(recipe, ordered)
+    sort_ingredients_in_recipe(recipe).each do |i|
+      ordered << {:ingredient => i.first.name, :amount => "#{i.last} #{i.first.unit}"}
+    end
+  end
+
+  def sort_ingredients_in_recipe(recipe)
+    recipe.ingredients_required.sort_by do |ingredient, quantity|
+      -ingredient.calories * quantity
+    end
   end
 
 end
