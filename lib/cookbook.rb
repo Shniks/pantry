@@ -58,4 +58,8 @@ class Cookbook
     end
   end
 
+  def date
+    Time.now.strftime("%m-%d-%Y")
+  end
+
 end
