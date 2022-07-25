@@ -3,6 +3,7 @@ SimpleCov.start
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/cookbook'
+require 'pry'
 
 class CookbookTest < Minitest::Test
 
@@ -63,6 +64,13 @@ class CookbookTest < Minitest::Test
                    {:name=>"Burger", :details=>{:ingredients=>[{:ingredient=>"Ground Beef", :amount=>"4 oz"}, {:ingredient=>"Bun", :amount=>"100 g"}], :total_calories=>500}}]
 
     assert_equal expectation, cookbook.summary
+  end
+
+  def test_it_can_return_date_cookbook_created #Has to be current date in Test also
+    cookbook = Cookbook.new
+    date = Time.now.strftime("%m-%d-%Y")
+
+    assert_equal date, cookbook.date
   end
 
 end

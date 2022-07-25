@@ -1,4 +1,5 @@
-require 'pry'
+require 'date'
+
 class Cookbook
 
   attr_reader :recipes
