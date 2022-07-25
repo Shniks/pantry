@@ -38,14 +38,16 @@ class Cookbook
     recipes.each do |recipe|
       ordered = []
       insert_ingredients_ordered(recipe, ordered)
-      cb_summary << {:name => recipe.name, :details => {:ingredients => ordered, :total_calories =>recipe.total_calories}}
+      cb_summary << {:name => recipe.name, :details => {:ingredients => ordered,
+                     :total_calories =>recipe.total_calories}}
     end
     cb_summary
   end
 
   def insert_ingredients_ordered(recipe, ordered)
     sort_ingredients_in_recipe(recipe).each do |i|
-      ordered << {:ingredient => i.first.name, :amount => "#{i.last} #{i.first.unit}"}
+      ordered << {:ingredient => i.first.name,
+                  :amount => "#{i.last} #{i.first.unit}"}
     end
   end
 
