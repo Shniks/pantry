@@ -42,7 +42,6 @@ class Cookbook
       cb_summary << {:name => recipe.name, :details => {:ingredients => ordered, :total_calories =>recipe.total_calories}}
     end
     cb_summary
-
   end
 
 end
